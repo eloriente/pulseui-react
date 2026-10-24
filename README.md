@@ -150,7 +150,7 @@ It exposes two read-only tools, `list_components` and `get_component(name)`. It 
 
 ### Prerequisites
 
-- Node.js >= 22.12
+- Node.js >= 24.11
 - npm >= 9
 
 ### Running Storybook

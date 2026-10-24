@@ -34,8 +34,12 @@ export function Textarea({
   className,
   id,
   style,
+  'aria-describedby': ariaDescribedBy,
   ...props
 }: TextareaProps) {
+  const errorId = error && errorMessage && id ? `${id}-error` : undefined;
+  const describedBy = [ariaDescribedBy, errorId].filter(Boolean).join(' ') || undefined;
+
   return (
     <div className={[styles.wrapper, fullWidth ? styles.fullWidth : ''].filter(Boolean).join(' ')}>
       <textarea
@@ -49,12 +53,12 @@ export function Textarea({
         ].filter(Boolean).join(' ')}
         style={{ resize, ...style }}
         aria-invalid={error || undefined}
-        aria-describedby={errorMessage && id ? `${id}-error` : undefined}
+        aria-describedby={describedBy}
         {...props}
       />
       {error && errorMessage && (
         <span
-          id={id ? `${id}-error` : undefined}
+          id={errorId}
           className={styles.errorMessage}
           role="alert"
         >

@@ -45,6 +45,7 @@ export function Input({
   className,
   id,
   disabled,
+  'aria-describedby': ariaDescribedBy,
   ...props
 }: InputProps) {
   const wrapperClasses = [
@@ -62,6 +63,9 @@ export function Input({
     className,
   ].filter(Boolean).join(' ');
 
+  const errorId = error && errorMessage && id ? `${id}-error` : undefined;
+  const describedBy = [ariaDescribedBy, errorId].filter(Boolean).join(' ') || undefined;
+
   return (
     <div className={wrapperClasses}>
       <div className={styles.inputWrapper}>
@@ -75,7 +79,7 @@ export function Input({
           className={inputClasses}
           disabled={disabled}
           aria-invalid={error || undefined}
-          aria-describedby={errorMessage && id ? `${id}-error` : undefined}
+          aria-describedby={describedBy}
           {...props}
         />
         {iconRight && (
@@ -86,7 +90,7 @@ export function Input({
       </div>
       {error && errorMessage && (
         <span
-          id={id ? `${id}-error` : undefined}
+          id={errorId}
           className={styles.errorMessage}
           role="alert"
         >

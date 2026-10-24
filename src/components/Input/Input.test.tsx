@@ -67,6 +67,16 @@ describe('Input', () => {
       expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'email-error');
     });
 
+    it('merges a consumer-supplied aria-describedby with the error id', () => {
+      render(<Input id="email" error errorMessage="Required" aria-describedby="hint" />);
+      expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'hint email-error');
+    });
+
+    it('preserves a consumer-supplied aria-describedby when there is no error', () => {
+      render(<Input id="email" aria-describedby="hint" />);
+      expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'hint');
+    });
+
     it('applies fullWidth class', () => {
       const { container } = render(<Input fullWidth />);
       expect(container.querySelector('div')?.className).toContain('fullWidth');

@@ -46,5 +46,10 @@ export const Disabled: Story = {
 };
 
 export const WithError: Story = {
-  args: { id: 'cb-error', label: 'I agree to the terms', error: true },
+  args: {
+    id: 'cb-error',
+    label: 'I agree to the terms',
+    error: true,
+    errorMessage: 'You must accept the terms to continue',
+  },
 };

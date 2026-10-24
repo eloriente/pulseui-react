@@ -42,5 +42,18 @@ describe('Radio', () => {
       render(<Radio error />);
       expect(screen.getByRole('radio')).toHaveAttribute('aria-invalid', 'true');
     });
+
+    it('links errorMessage via aria-describedby when error=true', () => {
+      render(<Radio id="plan" error errorMessage="Select a plan" />);
+      const radio = screen.getByRole('radio');
+      const error = screen.getByRole('alert');
+      expect(error).toHaveTextContent('Select a plan');
+      expect(radio).toHaveAttribute('aria-describedby', error.id);
+    });
+
+    it('does not render an alert when error is false', () => {
+      render(<Radio errorMessage="Select a plan" />);
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    });
   });
 });

@@ -44,6 +44,11 @@ describe('Textarea', () => {
       expect(screen.getByRole('alert')).toHaveTextContent('Too long');
     });
 
+    it('merges a consumer-supplied aria-describedby with the error id', () => {
+      render(<Textarea id="bio" error errorMessage="Too long" aria-describedby="hint" />);
+      expect(screen.getByRole('textbox')).toHaveAttribute('aria-describedby', 'hint bio-error');
+    });
+
     it('applies resize style', () => {
       render(<Textarea resize="none" />);
       expect(screen.getByRole('textbox')).toHaveStyle({ resize: 'none' });

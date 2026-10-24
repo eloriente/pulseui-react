@@ -12,6 +12,10 @@
   pointer-events: none;
 }
 
+.wrapper.error .track {
+  background-color: var(--pulse-color-error, #d0312d);
+}
+
 .track {
   position: relative;
   display: inline-flex;
@@ -97,4 +101,11 @@
   font-family: var(--pulse-font-family-base);
   font-size: var(--pulse-font-size-md, 1rem);
   color: var(--pulse-color-text);
+}
+
+.errorMessage {
+  display: block;
+  margin-top: var(--pulse-space-1, 4px);
+  font-size: var(--pulse-font-size-sm, 0.875rem);
+  color: var(--pulse-color-error, #d0312d);
 }

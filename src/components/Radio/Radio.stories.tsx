@@ -50,3 +50,13 @@ export const Disabled: Story = {
     await expect(canvas.getByRole('radio')).toBeDisabled();
   },
 };
+
+export const WithError: Story = {
+  args: {
+    id: 'radio-error',
+    name: 'plan',
+    label: 'Free plan',
+    error: true,
+    errorMessage: 'Please select a plan to continue',
+  },
+};

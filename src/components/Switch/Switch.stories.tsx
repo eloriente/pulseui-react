@@ -50,3 +50,12 @@ export const Disabled: Story = {
     await expect(canvas.getByRole('switch')).toBeDisabled();
   },
 };
+
+export const WithError: Story = {
+  args: {
+    id: 'sw-error',
+    label: 'Enable two-factor authentication',
+    error: true,
+    errorMessage: 'This setting is required for your account type',
+  },
+};

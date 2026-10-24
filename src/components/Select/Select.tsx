@@ -39,8 +39,12 @@ export function Select({
   className,
   id,
   children,
+  'aria-describedby': ariaDescribedBy,
   ...props
 }: SelectProps) {
+  const errorId = error && errorMessage && id ? `${id}-error` : undefined;
+  const describedBy = [ariaDescribedBy, errorId].filter(Boolean).join(' ') || undefined;
+
   return (
     <div className={[styles.wrapper, fullWidth ? styles.fullWidth : ''].filter(Boolean).join(' ')}>
       <div className={styles.selectWrapper}>
@@ -54,11 +58,11 @@ export function Select({
             className,
           ].filter(Boolean).join(' ')}
           aria-invalid={error || undefined}
-          aria-describedby={errorMessage && id ? `${id}-error` : undefined}
+          aria-describedby={describedBy}
           {...props}
         >
           {placeholder && (
-            <option value="" disabled>
+            <option value="" disabled hidden>
               {placeholder}
             </option>
           )}
@@ -70,7 +74,7 @@ export function Select({
       </div>
       {error && errorMessage && (
         <span
-          id={id ? `${id}-error` : undefined}
+          id={errorId}
           className={styles.errorMessage}
           role="alert"
         >

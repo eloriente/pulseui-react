@@ -48,5 +48,25 @@ describe('Checkbox', () => {
       render(<Checkbox error />);
       expect(screen.getByRole('checkbox')).toHaveAttribute('aria-invalid', 'true');
     });
+
+    it('links errorMessage via aria-describedby when error=true', () => {
+      render(<Checkbox id="terms" error errorMessage="You must accept the terms" />);
+      const checkbox = screen.getByRole('checkbox');
+      const error = screen.getByRole('alert');
+      expect(error).toHaveTextContent('You must accept the terms');
+      expect(checkbox).toHaveAttribute('aria-describedby', error.id);
+    });
+
+    it('merges a consumer-supplied aria-describedby with the error id', () => {
+      render(
+        <Checkbox id="terms" error errorMessage="Required" aria-describedby="hint" />,
+      );
+      expect(screen.getByRole('checkbox')).toHaveAttribute('aria-describedby', 'hint terms-error');
+    });
+
+    it('does not render an alert when error is false', () => {
+      render(<Checkbox errorMessage="Required" />);
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    });
   });
 });

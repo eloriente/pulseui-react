@@ -744,7 +744,13 @@
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "Error state"
+        "description": "Error state — renders error styling"
+      },
+      {
+        "name": "errorMessage",
+        "type": "string",
+        "required": false,
+        "description": "Error message displayed below the checkbox, announced via aria-describedby"
       },
       {
         "name": "className",
@@ -757,7 +763,9 @@
     "sizes": [],
     "accessibility": [
       "aria-invalid",
-      "aria-hidden"
+      "aria-describedby",
+      "aria-hidden",
+      "role"
     ],
     "examples": [
       {
@@ -798,7 +806,8 @@
         "args": {
           "id": "cb-error",
           "label": "I agree to the terms",
-          "error": true
+          "error": true,
+          "errorMessage": "You must accept the terms to continue"
         }
       }
     ]
@@ -2113,7 +2122,13 @@
         "type": "boolean",
         "required": false,
         "defaultValue": "false",
-        "description": "Error state"
+        "description": "Error state — renders error styling"
+      },
+      {
+        "name": "errorMessage",
+        "type": "string",
+        "required": false,
+        "description": "Error message displayed below the radio, announced via aria-describedby"
       },
       {
         "name": "className",
@@ -2126,7 +2141,9 @@
     "sizes": [],
     "accessibility": [
       "aria-invalid",
-      "aria-hidden"
+      "aria-describedby",
+      "aria-hidden",
+      "role"
     ],
     "examples": [
       {
@@ -2160,6 +2177,16 @@
           "name": "plan",
           "label": "Disabled option",
           "disabled": true
+        }
+      },
+      {
+        "name": "WithError",
+        "args": {
+          "id": "radio-error",
+          "name": "plan",
+          "label": "Free plan",
+          "error": true,
+          "errorMessage": "Please select a plan to continue"
         }
       }
     ]
@@ -2563,7 +2590,7 @@
     "props": [
       {
         "name": "label",
-        "type": "string",
+        "type": "ReactNode",
         "required": false,
         "description": "Accessible label — required for screen readers"
       },
@@ -2572,6 +2599,19 @@
         "type": "SwitchSize",
         "required": false,
         "defaultValue": "'md'"
+      },
+      {
+        "name": "error",
+        "type": "boolean",
+        "required": false,
+        "defaultValue": "false",
+        "description": "Error state — renders error styling"
+      },
+      {
+        "name": "errorMessage",
+        "type": "string",
+        "required": false,
+        "description": "Error message displayed below the switch, announced via aria-describedby"
       },
       {
         "name": "className",
@@ -2587,6 +2627,8 @@
       "lg"
     ],
     "accessibility": [
+      "aria-invalid",
+      "aria-describedby",
       "aria-hidden",
       "role"
     ],
@@ -2617,6 +2659,15 @@
           "id": "sw-disabled",
           "label": "Disabled switch",
           "disabled": true
+        }
+      },
+      {
+        "name": "WithError",
+        "args": {
+          "id": "sw-error",
+          "label": "Enable two-factor authentication",
+          "error": true,
+          "errorMessage": "This setting is required for your account type"
         }
       }
     ]

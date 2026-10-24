@@ -28,6 +28,11 @@ describe('Select', () => {
       expect(screen.getByRole('option', { name: 'Free' })).toBeInTheDocument();
       expect(screen.getByRole('option', { name: 'Pro' })).toBeInTheDocument();
     });
+
+    it('hides the placeholder option from the dropdown list', () => {
+      renderSelect();
+      expect(screen.getByText('Choose')).toHaveAttribute('hidden');
+    });
   });
 
   describe('Disabled/Loading', () => {
@@ -54,6 +59,15 @@ describe('Select', () => {
     it('shows error message', () => {
       render(<Select id="s" error errorMessage="Required"><option value="a">A</option></Select>);
       expect(screen.getByRole('alert')).toHaveTextContent('Required');
+    });
+
+    it('merges a consumer-supplied aria-describedby with the error id', () => {
+      render(
+        <Select id="s" error errorMessage="Required" aria-describedby="hint">
+          <option value="a">A</option>
+        </Select>,
+      );
+      expect(screen.getByRole('combobox')).toHaveAttribute('aria-describedby', 'hint s-error');
     });
   });
 });

@@ -73,3 +73,10 @@
   color: var(--pulse-color-text);
   line-height: 1.4;
 }
+
+.errorMessage {
+  display: block;
+  margin-top: var(--pulse-space-1, 4px);
+  font-size: var(--pulse-font-size-sm, 0.875rem);
+  color: var(--pulse-color-error, #d0312d);
+}

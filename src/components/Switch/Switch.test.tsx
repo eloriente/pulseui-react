@@ -43,4 +43,24 @@ describe('Switch', () => {
       expect(onChange).toHaveBeenCalled();
     });
   });
+
+  describe('Styling', () => {
+    it('sets aria-invalid when error=true', () => {
+      render(<Switch error />);
+      expect(screen.getByRole('switch')).toHaveAttribute('aria-invalid', 'true');
+    });
+
+    it('links errorMessage via aria-describedby when error=true', () => {
+      render(<Switch id="notifications" error errorMessage="This setting is required" />);
+      const toggle = screen.getByRole('switch');
+      const error = screen.getByRole('alert');
+      expect(error).toHaveTextContent('This setting is required');
+      expect(toggle).toHaveAttribute('aria-describedby', error.id);
+    });
+
+    it('accepts a ReactNode label', () => {
+      render(<Switch label={<strong>Dark mode</strong>} />);
+      expect(screen.getByText('Dark mode').tagName).toBe('STRONG');
+    });
+  });
 });
