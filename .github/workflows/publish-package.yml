@@ -37,4 +37,5 @@ jobs:
       - name: Publish
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # TODO: revert to secrets.GITHUB_TOKEN once the automatic-token 401 is diagnosed.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
