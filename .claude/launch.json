@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "storybook"],
       "port": 6006
+    },
+    {
+      "name": "a2ui-tv-finder",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "examples/a2ui-tv-finder"],
+      "port": 5173
     }
   ]
 }

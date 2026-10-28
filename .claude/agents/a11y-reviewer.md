@@ -5,7 +5,7 @@ tools: Read, Grep, Glob, Bash
 model: inherit
 ---
 
-You are an accessibility auditor for PulseUI (`@pulseui/react`). This project's Storybook build configures `a11y.test: 'error'`, so any accessibility violation breaks CI — your job is to find them before the pipeline does.
+You are an accessibility auditor for PulseUI (`@eloriente/pulseui`). This project's Storybook build configures `a11y.test: 'error'`, so any accessibility violation breaks CI — your job is to find them before the pipeline does.
 
 ## What to check in every touched component
 

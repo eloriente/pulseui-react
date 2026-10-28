@@ -1,11 +1,11 @@
 ---
 name: pulse-pr-reviewer
-description: Use before opening a PR, or when asked to review a diff/branch in PulseUI (@pulseui/react). Reviews changes against this repo's specific conventions (not generic React best practices) — folder structure, exports placement, CSF3 format, coverage threshold, forbidden patterns (clsx/cva, forwardRef, enums for variants).
+description: Use before opening a PR, or when asked to review a diff/branch in PulseUI (@eloriente/pulseui). Reviews changes against this repo's specific conventions (not generic React best practices) — folder structure, exports placement, CSF3 format, coverage threshold, forbidden patterns (clsx/cva, forwardRef, enums for variants).
 tools: Read, Grep, Glob, Bash
 model: inherit
 ---
 
-Review the given diff or branch against PulseUI's (`@pulseui/react`) real conventions (documented in `CLAUDE.md`), not generic React best practices. Use `git diff`/`git log` to scope which files changed.
+Review the given diff or branch against PulseUI's (`@eloriente/pulseui`) real conventions (documented in `CLAUDE.md`), not generic React best practices. Use `git diff`/`git log` to scope which files changed.
 
 ## This repo's specific checklist
 

@@ -24,15 +24,15 @@ Designed to be used as-is, forked, or extended to match your own design system.
 ### Installation
 
 ```bash
-npm install @pulseui/react
+npm install @eloriente/pulseui
 ```
 
 ### Basic usage
 
 ```tsx
-import { Button } from '@pulseui/react';
+import { Button } from '@eloriente/pulseui';
 // Include the base styles once in your app entry point
-import '@pulseui/react/styles';
+import '@eloriente/pulseui/styles';
 
 export default function App() {
   return <Button variant="primary" label="Hello world" />;
@@ -44,7 +44,7 @@ export default function App() {
 Import the tokens CSS to get access to all `--pulse-*` custom properties in your own styles:
 
 ```css
-@import '@pulseui/react/tokens';
+@import '@eloriente/pulseui/tokens';
 ```
 
 You can override any token in your root styles:
@@ -61,8 +61,8 @@ You can override any token in your root styles:
 All components accept a `className` prop. Pass Tailwind utility classes to extend or override the default styles:
 
 ```tsx
-import { Button } from '@pulseui/react';
-import '@pulseui/react/styles';
+import { Button } from '@eloriente/pulseui';
+import '@eloriente/pulseui/styles';
 
 // Tailwind classes are merged with the component's base styles
 <Button label="Custom" className="shadow-lg tracking-wide" />
@@ -98,8 +98,8 @@ Overlay components (Tooltip, Popover, DropdownMenu, Modal) are built on [Floatin
 ```tsx
 import { useState } from 'react';
 import { Trash2 } from 'lucide-react';
-import { Tooltip, Button, Modal } from '@pulseui/react';
-import '@pulseui/react/styles';
+import { Tooltip, Button, Modal } from '@eloriente/pulseui';
+import '@eloriente/pulseui/styles';
 
 function Example() {
   const [open, setOpen] = useState(false);
@@ -131,7 +131,7 @@ See the [Dependencies guide](https://eloriente.github.io/pulseui-react/?path=/do
 
 ## MCP server
 
-The package ships a read-only [Model Context Protocol](https://modelcontextprotocol.io) server so an AI coding assistant can look up component props, variants, sizes and usage examples instead of guessing. It only works when `@pulseui/react` is installed as a project dependency — it isn't published as a separate package.
+The package ships a read-only [Model Context Protocol](https://modelcontextprotocol.io) server so an AI coding assistant can look up component props, variants, sizes and usage examples instead of guessing. It only works when `@eloriente/pulseui` is installed as a project dependency — it isn't published as a separate package.
 
 ```json
 {

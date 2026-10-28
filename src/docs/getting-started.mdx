@@ -43,7 +43,7 @@ Everything you need to install PulseUI and render your first component.
 ## Installation
 
 ```bash
-npm install @pulseui/react
+npm install @eloriente/pulseui
 ```
 
 ---
@@ -54,18 +54,18 @@ PulseUI ships its own CSS. Import it **once** in your application entry point
 (e.g. `main.tsx`, `_app.tsx`, `layout.tsx`):
 
 ```tsx
-import '@pulseui/react/styles';
+import '@eloriente/pulseui/styles';
 ```
 
 If you also want access to the raw `--pulse-*` CSS custom properties in your own
 stylesheets, import the tokens separately:
 
 ```css
-@import '@pulseui/react/tokens';
+@import '@eloriente/pulseui/tokens';
 ```
 
-> You do **not** need both. `@pulseui/react/styles` already includes the component
-> styles. Use `@pulseui/react/tokens` only when you want to reference the variables
+> You do **not** need both. `@eloriente/pulseui/styles` already includes the component
+> styles. Use `@eloriente/pulseui/tokens` only when you want to reference the variables
 > directly in your own CSS files.
 
 ---
@@ -75,8 +75,8 @@ stylesheets, import the tokens separately:
 ### Button
 
 ```tsx
-import { Button } from '@pulseui/react';
-import '@pulseui/react/styles';
+import { Button } from '@eloriente/pulseui';
+import '@eloriente/pulseui/styles';
 
 export default function App() {
   return (
@@ -150,9 +150,9 @@ The package exposes three entry points:
 
 | Import path | What it provides |
 |---|---|
-| `@pulseui/react` | All components and TypeScript types |
-| `@pulseui/react/styles` | Bundled component CSS (`dist/style.css`) |
-| `@pulseui/react/tokens` | Design token CSS variables only (`dist/tokens/index.css`) |
+| `@eloriente/pulseui` | All components and TypeScript types |
+| `@eloriente/pulseui/styles` | Bundled component CSS (`dist/style.css`) |
+| `@eloriente/pulseui/tokens` | Design token CSS variables only (`dist/tokens/index.css`) |
 
 ---
 
@@ -161,5 +161,5 @@ The package exposes three entry points:
 All prop interfaces are exported and can be imported for use in your own code:
 
 ```tsx
-import type { ButtonProps, ButtonVariant } from '@pulseui/react';
+import type { ButtonProps, ButtonVariant } from '@eloriente/pulseui';
 ```

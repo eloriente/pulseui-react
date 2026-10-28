@@ -28,7 +28,7 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 # Dependencies
 
-Most `@pulseui/react` components are self-contained — native DOM behavior, CSS Modules, no
+Most `@eloriente/pulseui` components are self-contained — native DOM behavior, CSS Modules, no
 external library involved. A few wrap an external package internally to implement
 positioning, icons or date logic. This page lists exactly which component uses what, so you
 know what's landing in `node_modules` and your bundle before you hit it in a changelog or a
@@ -79,7 +79,7 @@ build time.
 ## `@floating-ui/react` — regular dependency
 
 [`@floating-ui/react`](https://floating-ui.com/) is a regular dependency, installed
-automatically with `@pulseui/react`. It handles positioning, focus management and
+automatically with `@eloriente/pulseui`. It handles positioning, focus management and
 dismiss-on-outside-click/Escape behavior for every component that renders content anchored to
 a trigger:
 
@@ -90,7 +90,7 @@ a trigger:
 - `Drawer`
 - `Combobox`
 
-Because it's a regular (not peer) dependency, its version is pinned by `@pulseui/react` —
+Because it's a regular (not peer) dependency, its version is pinned by `@eloriente/pulseui` —
 you can't install a different major version yourself. If your project already depends on
 `@floating-ui/react` directly, check for version drift between the two.
 
@@ -112,7 +112,7 @@ are regular dependencies too, but **no component uses them**. They power the
 which is built as a separate Node-only entry point (`dist/mcp/`) and is never imported from
 `src/index.ts`. They add to your `node_modules` install, but have zero effect on the
 component bundle, runtime behavior, or bundle size of anything you import from
-`@pulseui/react` — they're only exercised if you actually run `pulseui-react-mcp`.
+`@eloriente/pulseui` — they're only exercised if you actually run `pulseui-react-mcp`.
 
 ---
 

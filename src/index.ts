@@ -1,11 +1,11 @@
 /**
- * @pulseui/react
+ * @eloriente/pulseui
  *
  * A React component library built with TypeScript and CSS Modules.
  * Compatible with Tailwind CSS via the `className` prop on every component.
  */
 
-// Bundle the design tokens into dist/style.css so components render with `@pulseui/react/styles` alone
+// Bundle the design tokens into dist/style.css so components render with `@eloriente/pulseui/styles` alone
 import './tokens/index.css';
 
 // ─── Primitives ───────────────────────────────────────────────────────────────

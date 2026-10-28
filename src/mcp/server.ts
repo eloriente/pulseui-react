@@ -22,7 +22,7 @@ server.registerTool(
   {
     title: 'List PulseUI components',
     description:
-      'Lists every component available in the PulseUI (@pulseui/react) library with its category and short description. Use this to discover what is available before asking for details on a specific component.',
+      'Lists every component available in the PulseUI (@eloriente/pulseui) library with its category and short description. Use this to discover what is available before asking for details on a specific component.',
     inputSchema: {},
   },
   async () => {
@@ -38,7 +38,7 @@ server.registerTool(
   {
     title: 'Get PulseUI component details',
     description:
-      'Returns full details for a single PulseUI (@pulseui/react) component: props, variants, sizes, accessibility notes, and Storybook usage examples. Does not recommend which component to use — that decision is left to the developer.',
+      'Returns full details for a single PulseUI (@eloriente/pulseui) component: props, variants, sizes, accessibility notes, and Storybook usage examples. Does not recommend which component to use — that decision is left to the developer.',
     inputSchema: {
       name: z.string().describe('Exact component name, e.g. "Button" or "Select"'),
     },
