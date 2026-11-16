@@ -1,0 +1,120 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--pulse-radius-full, 9999px);
+  font-family: var(--pulse-font-family-base);
+  font-weight: var(--pulse-font-weight-medium, 500);
+  white-space: nowrap;
+  line-height: 1;
+  border: 1px solid transparent;
+  background-color: var(--pulse-color-surface-subtle, #f3f4f6);
+  color: var(--pulse-color-text, #111827);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Sizes */
+.sm {
+  padding: 2px 8px;
+  font-size: var(--pulse-font-size-xs, 0.75rem);
+}
+
+.md {
+  padding: 4px 10px;
+  font-size: var(--pulse-font-size-sm, 0.875rem);
+}
+
+.lg {
+  padding: 6px 12px;
+  font-size: var(--pulse-font-size-md, 1rem);
+}
+
+/* === Variants === */
+.default {
+  background-color: var(--pulse-color-surface-subtle, #f3f4f6);
+  color: var(--pulse-color-text, #111827);
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--pulse-color-border, #d1d5db);
+  color: var(--pulse-color-text, #111827);
+}
+
+.success {
+  background-color: var(--pulse-color-success-bg, #e7fdd8);
+  color: var(--pulse-color-success, #357a14);
+}
+
+.warning {
+  background-color: color-mix(in srgb, var(--pulse-color-warning, #92400e) 12%, transparent);
+  color: var(--pulse-color-warning, #92400e);
+}
+
+.error {
+  background-color: color-mix(in srgb, var(--pulse-color-error, #d0312d) 10%, transparent);
+  color: #842029;
+}
+
+/* === Selected state === */
+.selected {
+  background-color: var(--pulse-color-primary);
+  color: var(--pulse-color-neutral-0, #fff);
+  border-color: var(--pulse-color-primary);
+}
+
+/* === Clickable chips === */
+.clickable {
+  cursor: pointer;
+  border: 1px solid transparent;
+  font: inherit;
+}
+
+.clickable:hover:not(.disabled) {
+  filter: brightness(0.95);
+}
+
+.clickable:focus-visible {
+  outline: 2px solid var(--pulse-color-primary);
+  outline-offset: 2px;
+}
+
+/* === Disabled === */
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === Delete button === */
+.deleteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--pulse-radius-full, 9999px);
+  pointer-events: auto;
+}
+
+.deleteButton:hover {
+  opacity: 0.7;
+}
+
+.deleteButton:focus-visible {
+  outline: 2px solid var(--pulse-color-primary);
+  outline-offset: 1px;
+}
+
+.deleteButton:disabled {
+  cursor: not-allowed;
+}

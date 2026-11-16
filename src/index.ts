@@ -83,6 +83,9 @@ export type { SpinnerProps, SpinnerSize, SpinnerVariant } from './components/Spi
 export { Divider } from './components/Divider';
 export type { DividerProps, DividerOrientation, DividerVariant } from './components/Divider';
 
+export { Chip } from './components/Chip';
+export type { ChipProps, ChipVariant, ChipSize } from './components/Chip';
+
 // ─── Layout ──────────────────────────────────────────────────────────────────
 
 export { Card } from './components/Card';

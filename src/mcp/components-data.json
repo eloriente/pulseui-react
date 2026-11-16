@@ -813,6 +813,121 @@
     ]
   },
   {
+    "name": "Chip",
+    "category": "Display",
+    "description": "Small, compact element used for tags, filters, and selections\n(e.g. \"React ×\", selected filter pills).",
+    "importPath": "@eloriente/pulseui",
+    "props": [
+      {
+        "name": "variant",
+        "type": "ChipVariant",
+        "required": false,
+        "defaultValue": "'default'",
+        "description": "Visual style of the chip"
+      },
+      {
+        "name": "size",
+        "type": "ChipSize",
+        "required": false,
+        "defaultValue": "'md'",
+        "description": "Size of the chip"
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "defaultValue": "false",
+        "description": "Whether the chip is in a selected/active state"
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "defaultValue": "false",
+        "description": "Disables interaction and dims the chip"
+      },
+      {
+        "name": "onDelete",
+        "type": "() => void",
+        "required": false,
+        "description": "Called when the delete (×) button is pressed. When provided, a close icon is rendered."
+      },
+      {
+        "name": "onClick",
+        "type": "() => void",
+        "required": false,
+        "description": "Called when the chip itself is pressed. When provided, the chip renders as a clickable button."
+      },
+      {
+        "name": "children",
+        "type": "React.ReactNode",
+        "required": true,
+        "description": "Chip label / content"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional CSS classes"
+      }
+    ],
+    "variants": [
+      "default",
+      "outline",
+      "success",
+      "warning",
+      "error"
+    ],
+    "sizes": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "accessibility": [
+      "aria-label",
+      "aria-pressed",
+      "aria-disabled"
+    ],
+    "examples": [
+      {
+        "name": "Default",
+        "args": {
+          "children": "Default"
+        }
+      },
+      {
+        "name": "Variants",
+        "args": {}
+      },
+      {
+        "name": "Sizes",
+        "args": {}
+      },
+      {
+        "name": "Selected",
+        "args": {}
+      },
+      {
+        "name": "Disabled",
+        "args": {
+          "children": "Disabled",
+          "disabled": true
+        }
+      },
+      {
+        "name": "WithDelete",
+        "args": {
+          "children": "React",
+          "onDelete": "fn()"
+        }
+      },
+      {
+        "name": "Clickable",
+        "args": {}
+      }
+    ]
+  },
+  {
     "name": "Combobox",
     "category": "Form",
     "description": "Accessible combobox: a text input that filters a list of options as you type.\nFollows the ARIA APG \"editable combobox with list autocomplete\" pattern via\nFloating UI's purpose-built support for it — `useRole(context, { role:\n'combobox' })` wires `role=\"combobox\"`/`aria-expanded`/`aria-controls`/\n`aria-autocomplete` on the input and `role=\"listbox\"`/`role=\"option\"` on the\npopup, and `useListNavigation({ virtual: true })` moves `aria-activedescendant`\ninstead of real DOM focus — so, unlike {@link DropdownMenu}, there's no\n`FloatingFocusManager`/focus trap: focus never leaves the input. The trigger\nis the input itself (`refs.setReference`), reusing the span-wrapper-free\napproach this repo already uses wherever a real `<input>` can serve as the\nreference, since no component here uses `forwardRef`.\n\nManages its own input text internally; `value`/`defaultValue`/`onChange`\ntrack only the committed selection (controlled/uncontrolled, same pattern as\n{@link Popover}), not the in-progress search text.",

@@ -73,6 +73,9 @@ export type { SpinnerProps, SpinnerSize, SpinnerVariant } from './Spinner';
 export { Divider } from './Divider';
 export type { DividerProps, DividerOrientation, DividerVariant } from './Divider';
 
+export { Chip } from './Chip';
+export type { ChipProps, ChipVariant, ChipSize } from './Chip';
+
 // ─── Layout ──────────────────────────────────────────────────────────────────
 
 export { Card } from './Card';
