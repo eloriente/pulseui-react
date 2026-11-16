@@ -2106,6 +2106,129 @@
     ]
   },
   {
+    "name": "ProgressBar",
+    "category": "Feedback",
+    "description": "Progress bar for showing task or loading completion, with an\nindeterminate mode for unknown-duration operations.",
+    "importPath": "@eloriente/pulseui",
+    "props": [
+      {
+        "name": "value",
+        "type": "number",
+        "required": false,
+        "defaultValue": "0",
+        "description": "Current progress value. Ignored when `indeterminate` is `true`. Default `0`"
+      },
+      {
+        "name": "max",
+        "type": "number",
+        "required": false,
+        "defaultValue": "100",
+        "description": "Maximum value `value` is measured against. Default `100`"
+      },
+      {
+        "name": "size",
+        "type": "ProgressBarSize",
+        "required": false,
+        "defaultValue": "'md'"
+      },
+      {
+        "name": "variant",
+        "type": "ProgressBarVariant",
+        "required": false,
+        "defaultValue": "'default'"
+      },
+      {
+        "name": "indeterminate",
+        "type": "boolean",
+        "required": false,
+        "defaultValue": "false",
+        "description": "Shows an animated sweep instead of a fixed fill, for unknown-duration loading. Default `false`"
+      },
+      {
+        "name": "showLabel",
+        "type": "boolean",
+        "required": false,
+        "defaultValue": "false",
+        "description": "Shows a percentage/label text below the track. Default `false`"
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "description": "Custom label text, overrides the auto-generated percentage"
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "description": "Additional CSS classes"
+      }
+    ],
+    "variants": [
+      "default",
+      "success",
+      "warning",
+      "error"
+    ],
+    "sizes": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "accessibility": [
+      "aria-valuenow",
+      "aria-valuemin",
+      "aria-valuemax",
+      "aria-label",
+      "aria-labelledby",
+      "aria-busy",
+      "role"
+    ],
+    "examples": [
+      {
+        "name": "Default",
+        "args": {
+          "value": 40
+        }
+      },
+      {
+        "name": "WithLabel",
+        "args": {
+          "value": 65,
+          "showLabel": true
+        }
+      },
+      {
+        "name": "CustomLabel",
+        "args": {
+          "value": 3,
+          "max": 5,
+          "showLabel": true,
+          "label": "3 of 5 steps"
+        }
+      },
+      {
+        "name": "Indeterminate",
+        "args": {
+          "indeterminate": true,
+          "aria-label": "Uploading file"
+        }
+      },
+      {
+        "name": "Sizes",
+        "args": {
+          "value": 55
+        }
+      },
+      {
+        "name": "Variants",
+        "args": {
+          "value": 70
+        }
+      }
+    ]
+  },
+  {
     "name": "Radio",
     "category": "Form",
     "description": "Radio button with accessible label.",

@@ -122,6 +122,9 @@ export type {
 export { Alert } from './Alert';
 export type { AlertProps, AlertVariant } from './Alert';
 
+export { ProgressBar } from './ProgressBar';
+export type { ProgressBarProps, ProgressBarSize, ProgressBarVariant } from './ProgressBar';
+
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export { Tabs } from './Tabs';

@@ -132,6 +132,9 @@ export type {
 export { Alert } from './components/Alert';
 export type { AlertProps, AlertVariant } from './components/Alert';
 
+export { ProgressBar } from './components/ProgressBar';
+export type { ProgressBarProps, ProgressBarSize, ProgressBarVariant } from './components/ProgressBar';
+
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export { Tabs } from './components/Tabs';
